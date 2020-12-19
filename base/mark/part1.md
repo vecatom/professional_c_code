@@ -46,3 +46,21 @@ echo $?
 
 
 
+> 编译有引入头文件的C源码
+
+```shell
+
+gcc -C -Iinc src/test.c -o obc/test.o
+gcc obj/test.o bin/test
+bin/test
+
+
+```
+
+> 查看预编译引用文件的处理结果
+
+```shell
+gcc src/test.c -E -p       # 无头文件引入
+gcc -Iinc src/test.c -E -P  # 有头文件引入
+
+```
